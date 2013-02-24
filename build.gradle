@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    maven {
+        url 'http://repo.dev.mojang:80/content/groups/public/'
+    }
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-log4j12:1.7.2'
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'org.hamcrest:hamcrest-core:1.3'
+    testCompile 'org.hamcrest:hamcrest-library:1.3'
+}
+
+task(run, dependsOn: 'classes', type: JavaExec) {
+    main = 'com.mojang.mojam.MainClass'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+jar {
+    dependsOn configurations.runtime
+    from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes 'Main-Class': 'com.mojang.mojam.MainClass'
+    }
+}

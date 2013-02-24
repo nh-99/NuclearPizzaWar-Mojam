@@ -1,0 +1,24 @@
+.gradle/
+out/
+
+# IDEA Project Files
+*.iml
+*.ipr
+*.iws
+
+# Netbeans files
+build.xml
+nbproject
+manifest.mf
+nblibraries.properties
+junit
+junit_4
+junit-4.10.jar
+CopyLibs
+absolutelayout
+dist
+
+.DS_Store
+/nbproject/private/
+/build/
+/dist/
