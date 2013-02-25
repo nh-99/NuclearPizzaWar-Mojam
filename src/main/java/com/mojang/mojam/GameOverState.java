@@ -25,9 +25,6 @@ public class GameOverState extends BasicGameState {
 
         g.setColor(Color.black);
         g.fillRect(0, 0, container.getWidth(), container.getHeight());
-
-//        g.setColor(Color.white);
-//        Gui.renderCenterString(g, "GAME OVER", container.getWidth() / 2, container.getHeight() / 2 - 100);
         if (isVictory) {
             winImage.draw(0, 0);
         } else {
@@ -40,10 +37,7 @@ public class GameOverState extends BasicGameState {
 
         Input input = gc.getInput();
         if (input.isMouseButtonDown(Input.MOUSE_LEFT_BUTTON)) {
-//            Rectangle buttonRect = getStartGameButtonRect(gc);
-//            if(buttonRect.contains(input.getMouseX(), input.getMouseY())) {
             sbg.enterState(GameState.ID, new FadeOutTransition(), new FadeInTransition());
-//            }
         }
 
     }

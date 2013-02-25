@@ -16,9 +16,7 @@ junit_4
 junit-4.10.jar
 CopyLibs
 absolutelayout
-dist
 
 .DS_Store
-/nbproject/private/
 /build/
 /dist/
