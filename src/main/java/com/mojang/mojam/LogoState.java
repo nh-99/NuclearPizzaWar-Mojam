@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mojang.mojam;
 
 import org.newdawn.slick.*;
@@ -32,8 +28,6 @@ public class LogoState extends BasicGameState {
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
         g.setColor(Color.black);
         g.fillRect(0, 0, container.getWidth(), container.getHeight());
-//        g.setColor(Color.white);
-//        Gui.renderCenterString(g, "GAME OVER", container.getWidth() / 2, container.getHeight() / 2 - 100);
         logoImage.setColor(0, colMult.r, colMult.g, colMult.b, colMult.a);
         logoImage.setColor(1, colMult.r, colMult.g, colMult.b, colMult.a);
         logoImage.setColor(2, colMult.r, colMult.g, colMult.b, colMult.a);

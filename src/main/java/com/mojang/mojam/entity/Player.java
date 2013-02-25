@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mojang.mojam.entity;
 
 
@@ -168,14 +164,6 @@ public class Player extends HealthEntity {
 
             engineStrength += (16.0f - engineStrength) * 4.0f * deltaMS * .001f;
         }
-        // This direction is on the screen, not in the world. They should map
-//        // correctly thopugh.
-        /*
-         * dx += (direction.x * 1000 - dx) * (float) deltaMS * 0.001f; dz +=
-         * (direction.y * 1000 - dz) * (float) deltaMS * 0.001f; // So this is
-         * where the friction comes in (or should come in) dx *= .95f; dz *=
-         * .95f; if(direction.length() > 0) { direction.normalise(); }
-         */
         updateFriction(isMoving);
         {
             acceleration.x = -(velocity.x * playerFriction) + direction.x * getPlayerSpeed();
@@ -244,10 +232,6 @@ public class Player extends HealthEntity {
                 currentAnimation = a;
             }
         }
-        /*
-         * if (playerDirection.x > 0) { currentAnimation += 1; } if
-         * (playerDirection.y > 0) { currentAnimation += 2; }
-         */
 
         updateBeamWeapon(slickContainer, deltaMS);
 
@@ -273,9 +257,6 @@ public class Player extends HealthEntity {
                 } else {
                     shootBullet(aimX, aimZ, firingArm);
                 }
-
-                // velocity.x -= playerDirection.x * 1;
-                // velocity.z -= playerDirection.y * 1;
 
                 if (attributes.levels[Attributes.FIRE_DAMAGE_LEVEL] <= 1) {
                     Sounds.getInstance().playSound(Sounds.SHOT, x, y, z, .95f + random.nextFloat() * .1f, 1.0f);

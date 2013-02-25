@@ -1,12 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
-repositories {
-    maven {
-        url 'http://repo.dev.mojang:80/content/groups/public/'
-    }
-}
-
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
     compile fileTree(dir: 'lib/jar', include: '*.jar')

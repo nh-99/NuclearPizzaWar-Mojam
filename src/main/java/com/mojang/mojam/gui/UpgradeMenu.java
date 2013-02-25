@@ -63,8 +63,6 @@ public class UpgradeMenu {
                             player.buyUpgrade(selectedUpgrade);
                         }
                     }
-//                    player.setMoney(money - upgradeCost);
-//                    player.getAttributes().levels[selectedUpgrade]++;
                 }
             }
             xPos = container.getWidth() / 2 + 70 / 2;
