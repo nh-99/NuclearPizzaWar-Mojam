@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mojang.mojam.world;
 
 import java.util.*;
@@ -30,25 +26,7 @@ public class GameDirector {
 
     public GameDirector(PizzaWorld gameWorld) {
         this.gameWorld = gameWorld;
-        // name, gameWorld, waveDuration, minGroupSize, maxGroupSize,
-// numSubWaves, minSubWaveWait, maxSubWaveWait, types
-        // "LE." gw 80 2 4 4 6 8 {0, 1}
-        /*
-         * enemyWaves.add(new EnemyWave("Level 1", gameWorld, 40, 2, 4, 4, 6, 8,
-         * new int[] { 0 }, 0)); enemyWaves.add(new EnemyWave("Level 2",
-         * gameWorld, 40, 4, 7, 3, 8, 12, new int[] { 1 }, 0));
-         * enemyWaves.add(new EnemyWave("Level 3", gameWorld, 80, 6, 8, 6, 8,
-         * 16, new int[] { 0, 1 }, 0)); enemyWaves.add(new EnemyWave("Level 4",
-         * gameWorld, 80, 8, 12, 12, 15, 16, new int[] { 2 }, 0));
-         * enemyWaves.add(new EnemyWave("Level 5", gameWorld, 80, 10, 14, 6, 8,
-         * 16, new int[] { 0, 1, 2 }, 1)); enemyWaves.add(new
-         * EnemyWave("Level 6", gameWorld, 80, 3, 5, 4, 2, 6, new int[] { 3 },
-         * 1)); enemyWaves.add(new EnemyWave("Level 7", gameWorld, 80, 8, 17, 8,
-         * 5, 9, new int[] { 0, 1, 2, 3 }, 2)); enemyWaves.add(new
-         * EnemyWave("Level 8", gameWorld, 80, 12, 17, 9, 5, 9, new int[] { 0,
-         * 1, 2, 3 }, 2)); enemyWaves.add(new EnemyWave("Level 9", gameWorld,
-         * 80, 14, 17, 10, 5, 9, new int[] { 0, 1, 2, 3 }, 3));
-         */
+
         createEnemyWave("Level 1").addGroup(new EnemyGroup(0).addEnemy(1, 0, 0)).addGroup(new EnemyGroup(5).addEnemy(5, 0, 0));
 
         createEnemyWave("Level 2").addGroup(new EnemyGroup(0).addEnemy(5, 0, 0).addEnemy(5, 0, 0)).addGroup(new EnemyGroup(15).addEnemy(5, 0, 0).addEnemy(5, 0, 0));
@@ -174,8 +152,6 @@ public class GameDirector {
             } else {
                 message = "You won, I guess...";
             }
-        } else {
-            // message = enemyWaves.get(currentEnemyWave).getName();
         }
         int width = g.getFont().getWidth(message);
         int height = g.getFont().getHeight(message);

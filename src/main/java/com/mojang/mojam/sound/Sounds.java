@@ -72,10 +72,6 @@ public class Sounds {
             }
             sounds.put(name, sound);
         }
-//        float dx = listenerPosition.x - x;
-//        float dy = listenerPosition.y - y;
-//        float dz = listenerPosition.z - z;
-//        float dist = (float) Math.sqrt((double) (dx * dx + dy * dy + dz * dz));
         sound.play(pitch, volume);
     }
 
