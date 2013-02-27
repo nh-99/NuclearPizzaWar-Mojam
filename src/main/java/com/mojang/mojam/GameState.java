@@ -13,7 +13,7 @@ public class GameState extends BasicGameState implements MusicListener {
     public static final int ID = 3;
     private final int updatesPerSecond = 40;
     private final int msPerUpdate = 1000 / updatesPerSecond;
-    private final float musicVolume = 0.6f;
+
     private PizzaWorld pizzaWorld;
     private Camera camera;
     Music music;
@@ -46,7 +46,7 @@ public class GameState extends BasicGameState implements MusicListener {
         super.enter(container, game);
         startGame(container);
         music = new Music(soundPaths[random.nextInt(soundPaths.length)]);
-        music.play(1.0f, musicVolume);
+        music.play(1.0f, Settings.getVolume());
         music.addListener(this);
     }
 
@@ -85,7 +85,7 @@ public class GameState extends BasicGameState implements MusicListener {
     public void musicEnded(Music music) {
         try {
             music = new Music(soundPaths[random.nextInt(soundPaths.length)]);
-            music.play(1.0f, musicVolume);
+            music.play(1.0f, Settings.getVolume());
             music.addListener(this);
         } catch (Exception e) {
 

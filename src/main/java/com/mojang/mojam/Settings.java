@@ -14,6 +14,7 @@ public class Settings {
 	private static int width;
 	private static int height;
 	private static boolean fullscreen;
+    private static float volume = 1.0f;
 
     public static void load(String file) throws Exception {
     	width = 800;
@@ -33,6 +34,12 @@ public class Settings {
 				height = Integer.parseInt(value);
 			else if(key.equals("fullscreen"))
 				fullscreen = Boolean.parseBoolean(value);
+            else if(key.equals("volume")) {
+                float volumeValue = Float.parseFloat(value);
+                if (volumeValue >= 0 && volumeValue <= 10) {
+                    volume = volumeValue / 10f;
+                }
+            }
 			else
 				System.out.println("Unkown key: " + key);
 		}
@@ -49,5 +56,9 @@ public class Settings {
 
     public static boolean getFullscreen() {
     	return fullscreen;
+    }
+
+    public static float getVolume() {
+        return volume;
     }
 }

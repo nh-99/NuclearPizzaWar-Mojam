@@ -2,6 +2,7 @@ package com.mojang.mojam.sound;
 
 import java.util.HashMap;
 
+import com.mojang.mojam.Settings;
 import org.lwjgl.util.vector.Vector3f;
 import org.newdawn.slick.*;
 
@@ -57,7 +58,7 @@ public class Sounds {
     }
 
     public void playSound(String name, float x, float y, float z) {
-        playSound(name, x, y, z, 1.0f, 1.0f);
+        playSound(name, x, y, z, 1.0f, Settings.getVolume());
     }
 
     public void playSound(String name, float x, float y, float z, float pitch, float volume) {
@@ -72,6 +73,7 @@ public class Sounds {
             }
             sounds.put(name, sound);
         }
+
         sound.play(pitch, volume);
     }
 
