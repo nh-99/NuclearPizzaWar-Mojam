@@ -17,7 +17,7 @@ cp -r res dist/res
 cp -r lib/native/$1/* dist/
 cp gamesettings.ini dist
 
-if [ $2 = "run" ]
+if [[ $2 = "run" ]]
 then
   echo Starting the game..
   cd dist
