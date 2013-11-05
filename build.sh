@@ -8,7 +8,7 @@ fi
 
 echo "Building for $1.."
 
-gradle build
+gradlew build
 
 rm -r dist
 mkdir dist
