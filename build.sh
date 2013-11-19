@@ -15,7 +15,7 @@ mkdir dist
 cp build/libs/Cyborg-Hippos.jar dist/Cyborg-Hippos.jar
 cp -r res dist/res
 cp -r lib/native/$1/* dist/
-cp gamesettings.ini dist
+cp gamesettings.settings dist
 
 if [[ $2 = "run" ]]
 then

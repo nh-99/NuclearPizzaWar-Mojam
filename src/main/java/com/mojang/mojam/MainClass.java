@@ -8,7 +8,7 @@ public class MainClass {
         System.out.println("I'm a little teapot. That is all.");
 
         try {
-        	Settings.load("gamesettings.ini");
+        	Settings.load("gamesettings.settings");
         }
         catch(Throwable tr) {
         	System.out.println("Invalid settings-file.");
